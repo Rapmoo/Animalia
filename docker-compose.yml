@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: animalia-postgres
+
+    environment:
+      POSTGRES_DB: animalia
+      POSTGRES_USER: animalia
+      POSTGRES_PASSWORD: animalia_dev_password
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - animalia_postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+volumes:
+  animalia_postgres_data:
