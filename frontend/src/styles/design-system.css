@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+
+
+/* Primary — Forest */
+--color-primary-950: #14231d;
+--color-primary-900: #1d3329;
+--color-primary-800: #294638;
+--color-primary-700: #365b48;
+--color-primary-600: #4b715a;
+--color-primary: var(--color-primary-800);
+
+/* Secondary — Warm Earth / Gold */
+--color-secondary-900: #8f4d13;
+--color-secondary-700: #c9781f;
+--color-secondary-500: #e6a24b;
+--color-secondary-300: #f3cf95;
+--color-secondary: var(--color-secondary-500);
+
+/* Backgrounds & surfaces */
+--color-background: #f5f2eb;
+--color-background-alt: #ebe7dc;
+
+--color-surface: #fffdf8;
+--color-surface-raised: #ffffff;
+--color-surface-dark: #1d241f;
+
+/* Text */
+--color-text: #202521;
+--color-text-strong: #101411;
+--color-text-muted: #697067;
+--color-text-inverse: #f9f7f1;
+
+/* Borders */
+--color-border: rgba(32, 37, 33, 0.13);
+--color-border-strong: rgba(32, 37, 33, 0.24);
+
+/* Semantic */
+--color-success: #2f7d4d;
+--color-success-soft: #e4f2e8;
+
+--color-warning: #b36a0a;
+--color-warning-soft: #fff1d8;
+
+--color-error: #b43c32;
+--color-error-soft: #f9e5e2;
+
+--color-info: #356a8c;
+--color-info-soft: #e4eff5;
+
+/* Moss — soft organic tertiary, used for ambient texture & accents */
+--color-moss: #7c9473;
+--color-moss-soft: #eaf0e4;
+--color-blush: #e7b98f;
+
+/* Specimen clay — reserved for exactly one job: taxonomy / rank labels,
+   so it reads as information (like a museum index tag) rather than
+   decoration. Do not use for general CTAs or accents. */
+--color-clay: #a8452f;
+--color-clay-soft: #f6e4de;
+
+/* Subtle paper-grain texture (SVG turbulence), reused as a soft overlay */
+--texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+--cream: var(--color-background);
+--warm-gold: var(--color-secondary-500);
+--orange: var(--color-secondary-700);
+--red-orange: #c85a34;
+--deep-red: #6e2c23;
+--dark: var(--color-text);
+--glass: rgba(255, 255, 255, 0.18);
+
+
+--font-display: "Playfair Display", Georgia, serif;
+
+--font-body:
+"DM Sans",
+system-ui,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+sans-serif;
+
+/* Font sizes */
+--text-xs: 0.75rem;
+--text-sm: 0.875rem;
+--text-base: 1rem;
+--text-lg: 1.125rem;
+--text-xl: 1.25rem;
+--text-2xl: 1.5rem;
+--text-3xl: 1.875rem;
+
+--text-4xl: clamp(2.2rem, 4vw, 3.5rem);
+--text-5xl: clamp(3rem, 6vw, 5.5rem);
+
+/* Line heights */
+--leading-tight: 1.1;
+--leading-snug: 1.25;
+--leading-normal: 1.6;
+
+/* Letter spacing */
+--tracking-display: -0.025em;
+--tracking-wide: 0.09em;
+
+
+/*SPACING SYSTEM*/
+
+--space-1: 0.25rem;
+--space-2: 0.5rem;
+--space-3: 0.75rem;
+--space-4: 1rem;
+--space-5: 1.25rem;
+--space-6: 1.5rem;
+--space-8: 2rem;
+--space-10: 2.5rem;
+--space-12: 3rem;
+--space-16: 4rem;
+--space-20: 5rem;
+--space-24: 6rem;
+
+/*BORDER RADIUS*/
+
+--radius-xs: 0.375rem;
+--radius-sm: 0.625rem;
+--radius-md: 0.875rem;
+--radius-lg: 1.25rem;
+--radius-xl: 40% 60% 63% 37% / 44% 41% 59% 56%;
+--radius-2xl: 34% 66% 56% 44% / 60% 38% 62% 40%;
+--radius-pill: 999px;
+
+/*SHADOWS*/
+
+
+--shadow-xs:
+0 1px 2px rgba(20, 30, 23, 0.06);
+
+--shadow-sm:
+0 4px 12px rgba(20, 30, 23, 0.08);
+
+--shadow-md:
+0 12px 28px rgba(20, 30, 23, 0.12);
+
+--shadow-lg:
+0 24px 60px rgba(20, 30, 23, 0.16);
+
+--shadow-cinematic:
+0 30px 80px rgba(12, 22, 16, 0.28);
+
+/* MOTION */
+
+--ease-standard:
+cubic-bezier(0.2, 0.8, 0.2, 1);
+
+--ease-emphasized:
+cubic-bezier(0.16, 1, 0.3, 1);
+
+--duration-fast: 160ms;
+--duration-base: 260ms;
+--duration-slow: 500ms;
+
+/*LAYOUT */
+
+--content-max: 1280px;
+
+/* Responsive reference values */
+--bp-sm: 480px;
+--bp-md: 768px;
+--bp-lg: 1024px;
+--bp-xl: 1280px;
+}
+
+/*GLOBAL RESET*/
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+min-width: 320px;
+
+font-family: var(--font-body);
+color: var(--color-text);
+background: var(--color-background);
+
+line-height: var(--leading-normal);
+
+text-rendering: optimizeLegibility;
+
+-webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+-webkit-tap-highlight-color: transparent;
+}
+
+/*ACCESSIBLE FOCUS STATES */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+outline: 3px solid rgba(230, 162, 75, 0.55);
+outline-offset: 3px;
+}
+
+/* TYPOGRAPHY UTILITIES*/
+
+.ds-display {
+font-family: var(--font-display);
+font-size: var(--text-5xl);
+line-height: var(--leading-tight);
+letter-spacing: var(--tracking-display);
+}
+
+.ds-heading {
+font-family: var(--font-display);
+line-height: var(--leading-tight);
+letter-spacing: var(--tracking-display);
+color: var(--color-text-strong);
+}
+
+.ds-body {
+font-size: var(--text-base);
+line-height: var(--leading-normal);
+}
+
+.ds-caption {
+font-size: var(--text-sm);
+color: var(--color-text-muted);
+}
+
+.ds-scientific {
+font-family: Georgia, serif;
+font-style: italic;
+color: var(--color-text-muted);
+}
+
+.ds-eyebrow {
+font-family: var(--font-display);
+font-size: var(--text-lg);
+font-style: italic;
+font-weight: 600;
+letter-spacing: 0;
+color: var(--color-primary-700);
+}
+
+/* 
+BUTTONS
+ */
+
+.ds-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: var(--space-2);
+
+min-height: 44px;
+
+padding: 0.7rem 1.15rem;
+
+border: 1px solid transparent;
+border-radius: var(--radius-pill);
+
+font-weight: 700;
+line-height: 1;
+
+cursor: pointer;
+
+transition:
+transform var(--duration-fast) var(--ease-standard),
+box-shadow var(--duration-base) var(--ease-standard),
+background var(--duration-base),
+border-color var(--duration-base);
+}
+
+.ds-btn:hover {
+transform: translateY(-1px);
+box-shadow: var(--shadow-sm);
+}
+
+.ds-btn:active {
+transform: translateY(0);
+}
+
+.ds-btn--primary {
+background: var(--color-primary-800);
+color: var(--color-text-inverse);
+}
+
+.ds-btn--primary:hover {
+background: var(--color-primary-700);
+}
+
+.ds-btn--secondary {
+background: var(--color-secondary-500);
+color: #25190c;
+}
+
+.ds-btn--secondary:hover {
+background: var(--color-secondary-300);
+}
+
+.ds-btn--ghost {
+background: rgba(255, 255, 255, 0.55);
+border-color: var(--color-border);
+color: var(--color-primary-900);
+
+backdrop-filter: blur(10px);
+}
+
+.ds-btn--danger {
+background: var(--color-error);
+color: #ffffff;
+}
+
+/* INPUTS   
+*/
+
+.ds-input {
+width: 100%;
+min-height: 48px;
+
+padding: 0.75rem 1rem;
+
+color: var(--color-text);
+
+background: var(--color-surface-raised);
+
+border: 1px solid var(--color-border);
+border-radius: var(--radius-md);
+
+box-shadow: var(--shadow-xs);
+
+transition:
+border-color var(--duration-base),
+box-shadow var(--duration-base);
+}
+
+.ds-input::placeholder {
+color: #8a9089;
+}
+
+.ds-input:hover {
+border-color: var(--color-border-strong);
+}
+
+.ds-input:focus {
+border-color: var(--color-primary-600);
+
+box-shadow:
+0 0 0 4px rgba(75, 113, 90, 0.12);
+
+outline: none;
+}
+
+/*CARDS
+ */
+
+.ds-card {
+overflow: hidden;
+
+background: var(--color-surface);
+
+border: 1px solid var(--color-border);
+border-radius: var(--radius-xl);
+
+box-shadow: var(--shadow-sm);
+
+transition:
+transform var(--duration-base) var(--ease-emphasized),
+box-shadow var(--duration-base) var(--ease-standard);
+}
+
+.ds-card--interactive:hover {
+transform: translateY(-4px);
+box-shadow: var(--shadow-lg);
+}
+
+/* 
+BADGES
+ */
+
+.ds-badge {
+display: inline-flex;
+align-items: center;
+gap: 0.35rem;
+
+padding: 0.35rem 0.65rem;
+
+border: 1px solid var(--color-border);
+border-radius: var(--radius-pill);
+
+font-size: var(--text-xs);
+font-weight: 700;
+
+letter-spacing: 0.04em;
+
+background: var(--color-background-alt);
+color: var(--color-primary-900);
+}
+
+.ds-badge--success {
+background: var(--color-success-soft);
+color: var(--color-success);
+}
+
+.ds-badge--warning {
+background: var(--color-warning-soft);
+color: var(--color-warning);
+}
+
+.ds-badge--error {
+background: var(--color-error-soft);
+color: var(--color-error);
+}
+
+/*
+SECTION HEADINGS
+ */
+
+.ds-section-heading {
+max-width: 48rem;
+margin-bottom: var(--space-10);
+}
+
+.ds-section-heading__eyebrow {
+margin-bottom: var(--space-3);
+}
+
+.ds-section-heading__title {
+margin: 0 0 var(--space-4);
+
+font-family: var(--font-display);
+
+font-size: var(--text-4xl);
+
+line-height: var(--leading-tight);
+}
+
+.ds-section-heading__text {
+max-width: 42rem;
+
+color: var(--color-text-muted);
+
+font-size: var(--text-lg);
+}
+
+/*
+LAYOUT UTILITIES
+*/
+
+.ds-container {
+width: min(
+calc(100% - 2rem),
+var(--content-max)
+);
+
+margin-inline: auto;
+}
+
+.ds-stack > * + * {
+margin-top: var(
+--stack-space,
+var(--space-4)
+);
+}
+
+/*
+SKIP LINK (accessibility — lets keyboard/screen-reader users jump
+past the navbar straight to page content)
+*/
+
+.skip-link {
+position: absolute;
+top: -100%;
+left: var(--space-4);
+z-index: 1000;
+
+padding: 0.75rem 1.25rem;
+
+background: var(--color-primary-950);
+color: var(--color-text-inverse);
+
+border-radius: var(--radius-md);
+
+font-weight: 700;
+text-decoration: none;
+
+transition: top var(--duration-fast);
+}
+
+.skip-link:focus {
+top: var(--space-4);
+}
+
+/*
+SPECIMEN TAG
+A small corner label, like a museum index card — used on animal
+cards/profiles to show rank/classification. This is the one place
+--color-clay is used, so it always means "taxonomy".
+*/
+
+.specimen-tag {
+display: inline-flex;
+align-items: center;
+gap: 0.3rem;
+
+padding: 0.2rem 0.6rem;
+
+border-radius: var(--radius-xs);
+
+background: var(--color-clay-soft);
+color: var(--color-clay);
+
+font-size: var(--text-xs);
+font-weight: 700;
+letter-spacing: 0.02em;
+}
+
+/*
+FIELD NOTE
+A callout for a single teaching moment on a page — an explanatory
+aside, not a repeated card pattern. Use once per page, not per item.
+*/
+
+.field-note {
+display: flex;
+gap: var(--space-4);
+
+padding: var(--space-5) var(--space-6);
+
+background: var(--color-moss-soft);
+border-left: 3px solid var(--color-primary-700);
+border-radius: var(--radius-sm);
+}
+
+.field-note__icon {
+flex-shrink: 0;
+font-size: 1.4rem;
+line-height: 1;
+}
+
+.field-note p {
+margin: 0;
+color: var(--color-text);
+font-size: var(--text-sm);
+}
+
+.field-note strong {
+color: var(--color-text-strong);
+}
+
+/*
+QUICK FACT BAR
+A horizontal strip of short, scannable facts — the "at a glance"
+teaching pattern, distinct from a generic stats row: each fact pairs
+a short label with its value, read left to right like a caption line.
+*/
+
+.quick-fact-bar {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-6);
+}
+
+.quick-fact {
+display: flex;
+flex-direction: column;
+gap: 0.2rem;
+}
+
+.quick-fact dt {
+color: var(--color-text-muted);
+font-size: var(--text-xs);
+}
+
+.quick-fact dd {
+margin: 0;
+color: var(--color-text-strong);
+font-family: var(--font-display);
+font-size: var(--text-xl);
+}
+
+/*
+SECTION TABS
+Sticky in-page navigation for long content (used on the animal
+profile page) so a reader can jump to Habitat, Diet, Sounds, etc.
+without endless scrolling — this is the primary "fix the UX for a
+long educational page" pattern.
+*/
+
+.section-tabs {
+position: sticky;
+top: 76px;
+z-index: 40;
+
+display: flex;
+gap: var(--space-2);
+overflow-x: auto;
+
+padding: var(--space-3) 0;
+
+background: color-mix(in srgb, var(--color-background) 90%, transparent);
+backdrop-filter: blur(10px);
+
+border-bottom: 1px solid var(--color-border);
+
+scrollbar-width: none;
+}
+
+.section-tabs::-webkit-scrollbar {
+display: none;
+}
+
+.section-tab {
+flex-shrink: 0;
+
+padding: 0.5rem 1rem;
+
+border-radius: var(--radius-pill);
+border: 1px solid transparent;
+
+color: var(--color-text-muted);
+font-size: var(--text-sm);
+font-weight: 700;
+text-decoration: none;
+white-space: nowrap;
+
+transition: background var(--duration-fast), color var(--duration-fast), border-color var(--duration-fast);
+}
+
+.section-tab:hover {
+background: var(--color-background-alt);
+color: var(--color-text-strong);
+}
+
+.section-tab.active {
+background: var(--color-primary-800);
+border-color: var(--color-primary-800);
+color: var(--color-text-inverse);
+}
+
+/*
+RESPONSIVE
+ */
+
+@media (max-width: 767px) {
+.ds-container {
+width: min(
+calc(100% - 1.25rem),
+var(--content-max)
+);
+}
+
+.ds-section-heading {
+margin-bottom: var(--space-8);
+}
+}
+
+/*
+REDUCED MOTION
+*/
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+
+transition-duration: 0.01ms !important;
+
+scroll-behavior: auto !important;
+
+
+}
+}
